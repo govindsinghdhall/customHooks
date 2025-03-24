@@ -1,5 +1,6 @@
 export async function fetchAvailablePlaces() {
   const response = await fetch('http://localhost:3000/places');
+  // fetch mean GET request
   const resData = await response.json();
 
   if (!response.ok) {
@@ -11,12 +12,12 @@ export async function fetchAvailablePlaces() {
 
 export async function fetchUserPlaces() {
   const response = await fetch('http://localhost:3000/user-places');
+  // fetch mean GET request
   const resData = await response.json();
 
   if (!response.ok) {
     throw new Error('Failed to fetch user places');
   }
-
   return resData.places;
 }
 
